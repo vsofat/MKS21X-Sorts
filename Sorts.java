@@ -2,7 +2,7 @@ public class Sorts{
   public static int smallestVal(int ary[], int index) {
   int small = ary[index];
   int smallestIndex = index;
-  for (int i = index + 1; i < ary.length; i ++) {
+  for (int i = index + 1; i < ary.length; i++) {
     if (ary[i] < small) {
       small = ary[i];
       smallestIndex = i;
@@ -18,6 +18,5 @@ public static void selectionSort(int [] ary) {
     smallest = smallestVal(ary,i);
     ary[i] = smallest;
     }
-  return ary;
   }
 }
