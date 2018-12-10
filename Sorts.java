@@ -19,4 +19,20 @@ public static void selectionSort(int [] ary) {
     ary[i] = smallest;
     }
   }
+
+public static void bubbleSort(int[] data){
+    boolean status = false;
+    int current;
+    while(!status){
+      status = true;
+      for(int index = 0;index<data.length-1;index++){
+        if(data[index]>data[index+1]){
+          current=data[index];
+          data[index]=data[index+1];
+          data[index+1]=current;
+          status = false;
+        }
+      }
+    }
+  }
 }
