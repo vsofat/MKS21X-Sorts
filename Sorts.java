@@ -3,33 +3,33 @@ public class Sorts{
   int small = ary[index];
   int smallestIndex = index;
   for (int i = index + 1; i < ary.length; i++) {
-    if (ary[i] < small) {
-      small = ary[i];
-      smallestIndex = i;
-    }
-  }
-  return smallestIndex;
+  if (ary[i] < small) {
+  small = ary[i];
+  smallestIndex = i;
+}
+}
+return smallestIndex;
 } */
 
 public static void selectionSort(int[] ary){
   if(ary.length!=0){
-  int placeHolder;
-  int indexVal;
-  for(int i = 0; i<ary.length; i++){
-    placeHolder = ary[i];
-    indexVal = i;
-    for(int j = i; j < ary.length; j++){
-      if(ary[j]<placeHolder){
-        placeHolder=ary[j];
-        indexVal=j;
-      }}
-    ary[indexVal]=ary[i];
-    ary[i]=placeHolder;
+    int placeHolder;
+    int indexVal;
+    for(int i = 0; i<ary.length; i++){
+      placeHolder = ary[i];
+      indexVal = i;
+      for(int j = i; j < ary.length; j++){
+        if(ary[j]<placeHolder){
+          placeHolder=ary[j];
+          indexVal=j;
+        }}
+        ary[indexVal]=ary[i];
+        ary[i]=placeHolder;
+      }
+    }
   }
-}
-}
 
-public static void bubbleSort(int[] data){
+  public static void bubbleSort(int[] data){
     boolean status = false;
     int current;
     while(!status){
@@ -45,17 +45,14 @@ public static void bubbleSort(int[] data){
     }
   }
   public static void insertionSort(int ary[]) {
-  	    for (int i = 1;  i < ary.length; i ++) {
-  	      int orig = ary[i];
-  	      for (int j = i - 1; j >= 0; j --) {
-  	        if (orig < ary[j]) {
-  	          ary[j + 1] = ary[j];
-  	          ary[j] = orig;
-  	        }
-  	        else {
-  	          j = -1;
-  	        }
-  	      }
-  	    }
-  	  }
+    for (int i = 1;  i < ary.length; i ++) {
+      int orig = ary[i];
+      int j = i - 1;
+      while (j >= 0 && ary[j] > orig){
+        ary[j+1] = ary [j]; // shifting one over if ary[j] is greater than what you had before
+        j--;
+      }
+      ary[j+1] = orig;
+    }
+  }
 }
